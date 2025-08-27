@@ -1,0 +1,9 @@
+template_message = [("system","you are an experianced {language} developer"),
+                    ("human","i am preparing for DSA interview and practising question. help me with the error{error}")
+
+                    ]
+Prompt_template_with_message = ChatPromptTemplate.from_messages(template_message)
+Prompt_input = Prompt_template_with_message.invoke({"language":"python", "error":"; missing error"})
+print(Prompt_input)
+response = model.invoke(Prompt_input)
+print(response.content)
